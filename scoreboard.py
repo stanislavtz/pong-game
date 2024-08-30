@@ -4,8 +4,7 @@ COLOR = "white"
 ALIGNMENT = "center"
 SCORES_FONT = ("Courier", 56, "bold")
 WINNER_FONT = ("Courier", 36, "bold")
-
-WINNING_SCORES = 3
+WINNING_SCORES = 10
 
 
 class ScoreBoard(Turtle):
