@@ -10,8 +10,8 @@ WINNING_SCORES = 10
 class ScoreBoard(Turtle):
 	def __init__(self):
 		super().__init__()
-		self.left_scores = 0
-		self.right_scores = 0
+		self.left_score = 0
+		self.right_score = 0
 
 		self.color(COLOR)
 		self.penup()
@@ -21,14 +21,14 @@ class ScoreBoard(Turtle):
 
 	def display_result(self):
 		self.clear()
-		self.write(f"{self.left_scores} : {self.right_scores}", align=ALIGNMENT, font=SCORES_FONT)
+		self.write(f"{self.left_score} : {self.right_score}", align=ALIGNMENT, font=SCORES_FONT)
 
-	def increase_right_scores(self):
-		self.right_scores += 1
+	def increase_right_score(self):
+		self.right_score += 1
 		self.display_result()
 
-	def increase_left_scores(self):
-		self.left_scores += 1
+	def increase_left_score(self):
+		self.left_score += 1
 		self.display_result()
 
 	def display_winner(self, player):
@@ -36,9 +36,9 @@ class ScoreBoard(Turtle):
 		self.write(f"The WINNER is {player}", align=ALIGNMENT, font=WINNER_FONT)
 
 	def winner(self):
-		if self.left_scores == WINNING_SCORES:
+		if self.left_score == WINNING_SCORES:
 			self.display_winner("LEFT PLAYER")
-		elif self.right_scores == WINNING_SCORES:
+		elif self.right_score == WINNING_SCORES:
 			self.display_winner("RIGHT PLAYER")
 		else:
 			return False

@@ -48,13 +48,13 @@ while not game_is_over:
 	# Define right paddle scoring and ball reset position
 	if ball.xcor() < -600:
 		ball.reset()
-		score_board.increase_right_scores()
+		score_board.increase_right_score()
 		speed = 0.075
 
 	# Define left paddle scoring and ball reset position
 	if ball.xcor() > 600:
 		ball.reset()
-		score_board.increase_left_scores()
+		score_board.increase_left_score()
 		speed = 0.075
 
 	# Define winner
