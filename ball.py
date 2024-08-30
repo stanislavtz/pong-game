@@ -23,3 +23,7 @@ class Ball(Turtle):
 
 	def bounce_from_paddle(self):
 		self.x_step *= -1
+
+	def reset(self):
+		self.goto(0, 0)
+		self.x_step *= -1

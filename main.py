@@ -39,4 +39,8 @@ while not game_is_over:
 	if ball.distance(left_paddle) < 30 or ball.distance(right_paddle) < 30:
 		ball.bounce_from_paddle()
 
+	if ball.xcor() < -600 or ball.xcor() > 600:
+		ball.reset()
+
+
 sc.exitonclick()
