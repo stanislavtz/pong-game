@@ -26,9 +26,11 @@ sc.onkeypress(left_paddle.move_down, "s")
 sc.onkeypress(right_paddle.move_up, "Up")
 sc.onkeypress(right_paddle.move_down, "Down")
 
+speed = 0.075
+
 while not game_is_over:
 	sc.update()
-	time.sleep(0.075)
+	time.sleep(speed)
 	ball.move()
 
 	# Define collision with wall
@@ -38,9 +40,12 @@ while not game_is_over:
 	# Define collision with paddle
 	if ball.distance(left_paddle) < 30 or ball.distance(right_paddle) < 30:
 		ball.bounce_from_paddle()
+		speed *= 0.9
 
+	# Define scoring and ball reset position
 	if ball.xcor() < -600 or ball.xcor() > 600:
 		ball.reset()
+		speed = 0.075
 
 
 sc.exitonclick()
