@@ -3,7 +3,7 @@ from turtle import Turtle
 COLOR = "white"
 ALIGNMENT = "center"
 SCORES_FONT = ("Courier", 56, "bold")
-WINNER_FONT = ("Courier", 36, "bold")
+WINNER_FONT = ("Courier", 30, "bold")
 WINNING_SCORES = 10
 
 
@@ -33,7 +33,7 @@ class ScoreBoard(Turtle):
 
 	def display_winner(self, player):
 		self.goto(0, 0)
-		self.write(f"The WINNER is {player}", align=ALIGNMENT, font=WINNER_FONT)
+		self.write(f"The WINNER is: {player}", align=ALIGNMENT, font=WINNER_FONT)
 
 	def winner(self):
 		if self.left_score == WINNING_SCORES:
